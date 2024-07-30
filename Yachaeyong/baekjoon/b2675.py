@@ -7,4 +7,4 @@ for t in range(T):
 
     for i in S:
         print(int(R) * i, end='') #개행문자제거
-    print() #줄 바꿈
+    print() #줄 바꿈용
