@@ -6,9 +6,12 @@ t = int(input())
 
 # 범위 설정
 for tc in range(1, t+1):
-    blank_num = t + 1 - tc
-    print(' ' * blank_num, '*' * tc)
+    blank_num = t - tc
+    print((' ' * blank_num) + ('*' * tc))
 
 # 범위 아무 생각 없이 잡으면
 # 별이 사라져요
-# 이거 먼저하고 long 출력 풀었으면 풀었다 ㄹㅇ
+
+
+# 근데 , 찍고 프린트 하면 출력 형식 오류가 나와요
+# + 합시다 +
