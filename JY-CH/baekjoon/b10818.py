@@ -4,8 +4,6 @@ num = int(input())
 
 lst = list(map(int, input().split()))
 
-print(lst)
-
 sorted(lst)
 
 max_value = sorted(lst)[num-1]
