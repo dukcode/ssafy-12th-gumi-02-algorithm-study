@@ -14,8 +14,9 @@ for i in range(m):
     # print(answer)
     answer = answer[:j-1] + list(reversed(answer[j-1:k])) + answer[k:]
 
-for i in range(n):    
-    print(answer[i], end=' ')
+print(*answer)
+# for i in range(n):    
+#     print(answer[i], end=' ')
 
 # 답 낼때 앞문제에서 print for문 얻어걸린거 야무지게 돌렸습니다.
 # 신기하게 배열을 더해도 list끼리 더해지네요.
