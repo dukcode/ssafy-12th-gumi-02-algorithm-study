@@ -27,3 +27,6 @@ for i in range(9):
 
 print(max_value)
 print(a, b)
+
+# pprint 써서 이쁘게 볼려고함.
+# 커밋 수정좀
