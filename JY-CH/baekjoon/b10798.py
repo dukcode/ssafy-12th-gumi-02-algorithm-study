@@ -20,6 +20,7 @@ from pprint import pprint
 #         print(arr[j][i], end='')
 #
 # 안되서 답지보러감.
+# 이건 왜 안돼.?
 
 # word라는 리스트를 생성하고 받은 요소들을 배열
 words = []
