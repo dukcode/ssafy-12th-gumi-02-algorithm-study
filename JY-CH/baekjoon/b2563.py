@@ -1,13 +1,22 @@
 # 색종이
 
-arr = [[0] * 100 for _ in range(100)]
-
 num = int(input())
+n = 100
+m = 10
+arr = [[0] * n for _ in range(n)]
 
-x1, y1 = map(int, input().split())
-x2, y2 = map(int, input().split())
-x3, y3 = map(int, input().split())
+for _ in range(num):
+
+    px, py = map(int, input().split())
+
+    for x in range(px, px + m):
+        for y in range(py, py + m):
+            arr[x][y] = 1
 
 
 cnt = 0
-if 
+for x in range(n):
+    for y in range(n):
+        cnt += arr[x][y]
+
+print(cnt)
