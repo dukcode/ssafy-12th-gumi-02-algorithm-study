@@ -33,3 +33,6 @@ for tc in range(1, T+1):
                 min_height = k
     # 출력.
     print(f'#{tc} {b_height[max_height] - b_height[min_height]}')
+
+
+    #############################
