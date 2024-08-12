@@ -15,10 +15,3 @@ for tc in range(1, T+1):
             max_cnt = cnt
 
     print(f'#{tc} {max_cnt}')
-
-
-
-
-
-
-
