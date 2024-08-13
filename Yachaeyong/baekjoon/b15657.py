@@ -19,7 +19,7 @@ def dfs(st):
         return
     for i in range(st, N):
         result.append(num[i])
-        dfs(i+1)
+        dfs(i)  # 중복도 가능함. 중복 뺄려면 i+1하면 됨
         result.pop()
 
 dfs(0)
