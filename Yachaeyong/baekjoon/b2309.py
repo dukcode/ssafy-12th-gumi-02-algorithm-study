@@ -18,22 +18,23 @@ for d in data:
     print(d)
 
 # 2. 재귀
-data = [int(input()) for _ in range(9)]
-temp = []
-
-def comb(N, idx):
-    if N == 7:
-        if sum(temp) == 100:
-            for i in sorted(temp):
-                print(i)
-            exit()
-        else:
-            return
-
-    for i in range(idx, len(data)):
-        temp.append(data[i])
-        comb(N + 1, idx + 1)
-        temp.pop()
-
-
-comb(0, 0)
+# data = [int(input()) for _ in range(9)]
+# temp = []
+#
+#
+# def comb(N, idx):
+#     if N == 7:
+#         if sum(temp) == 100:
+#             for i in sorted(temp):
+#                 print(i)
+#             exit()
+#         else:
+#             return
+#
+#     for i in range(idx, len(data)):
+#         temp.append(data[i])
+#         comb(N + 1, idx + 1)
+#         temp.pop()
+#
+#
+# comb(0, 0)
