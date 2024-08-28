@@ -8,6 +8,9 @@
 # Log file
 *.log
 
+# .gitignore
+*.idea
+
 # BlueJ files
 *.ctxt
 
