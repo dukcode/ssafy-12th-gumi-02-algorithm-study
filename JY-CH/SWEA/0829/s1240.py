@@ -26,23 +26,25 @@ for tc in range(1, T+1):
             if arr[i][j] == 1:
                 x ,y = i, j
 
-
-    print(x, y)
-    print(arr[x][y-55:y+1])
-
+    answer_lst=[]
     for i in range(0,56,7):
         check_lst=[]
         for j in range(7):
             check_lst.append(arr[x][(y-55) + i+j])
 
         key = ''.join(map(str, check_lst))
+        answer_lst.append(pass_dict[f'{key}'])
 
+    sum1 = 0
+    sum2 = 0
+    for i in range(0, 8, 2):
+        sum1 += answer_lst[i]*3
+        sum2 += answer_lst[i+1]
 
-
-
-
-
-
-
+    result = sum1 + sum2
+    if result % 10 == 0:
+        print(f'#{tc} {sum(answer_lst)}')
+    else:
+        print(f'#{tc} {0}')
 
 
