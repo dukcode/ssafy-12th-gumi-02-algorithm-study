@@ -9,9 +9,7 @@ for tc in range(1, T+1):
         data[A] = B
 
 
-    for i in range(N, -1, -1):
-        if i == 0 or data[i] != 0:
-            continue
+    for i in range(N, 0, -1):
         if data[i] == 0:
             if i * 2 + 1 > N:
                 data[i] = data[i*2]
