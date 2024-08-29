@@ -1,31 +1,31 @@
-def solve1(l, page, p):
-    k = p + l
-    if p == page:
+def solve1(l, page, r):
+    mid = (r + l)//2
+    if mid == page:
         return 1
-    elif k/2 > page:
-        return solve1(l, page, k / 2 ) + 1
-    else:
-        return solve1(k / 2, page, p) + 1
+    elif mid > page:
+        return solve1(l, page, mid) + 1
+    elif mid < page:
+        return solve1(mid, page, r) + 1
 
 
 T = int(input())
-for tc in range(1, T+1):
+for tc in range(1, T + 1):
     P, a, b = map(int, input().split())
-    if a > P/2:
-        A = solve1(P/2, a, ((P/2)+P)/2)
-    elif a < P/2:
-        A = solve1(0, a, P/2)
+    A = 0
+    B = 0
+    if a > P / 2:
+        A += solve1(P/2, a, P)
+    elif a < P / 2:
+        A += solve1(1, a, P/2)
 
-    if b > P/2:
-        B = solve1(P/2, b, ((P/2)+P)/2)
-    elif b < P/2:
-        B = solve1(0, a, P/2)
-    
+    if b > P / 2:
+        B += solve1(P/2, b, P)
+    elif b < P / 2:
+        B += solve1(1, b, P/2)
+
     if A > B:
-        result = 'B'
+        print(f'#{tc} B')
     elif A < B:
-        result = 'A'
-    elif A == B:
-        result = 0
-    
-    print(f'#{tc} {result}')
+        print(f'#{tc} A')
+    else:
+        print(f'#{tc} 0')
