@@ -7,7 +7,9 @@ import java.io.OutputStreamWriter;
 /**
  * 새로운 불면증 치료법
  */
-public class S1288 {
+public class S1288_1 {
+
+  private static final int END = (1 << 10) - 1;
 
   private static BufferedReader br;
   private static BufferedWriter bw;
@@ -27,34 +29,26 @@ public class S1288 {
   }
 
   private static int solve(int base) {
-    boolean[] appeared = new boolean[10];
+    int appeared = 0;
 
     int num = base;
     int cnt = 0;
     do {
       cnt++;
-      checkAppeared(appeared, num);
+      appeared = checkAppeared(appeared, num);
       num += base;
-    } while (!isOver(appeared));
+    } while (appeared != END);
 
     return cnt * base;
   }
 
-  private static void checkAppeared(boolean[] appeared, int num) {
+  private static int checkAppeared(int appeared, int num) {
     while (num > 0) {
-      appeared[num % 10] = true;
+      appeared = appeared | 1 << (num % 10);
       num /= 10;
     }
-  }
 
-  private static boolean isOver(boolean[] appeared) {
-    for (boolean isAppeared : appeared) {
-      if (!isAppeared) {
-        return false;
-      }
-    }
-
-    return true;
+    return appeared;
   }
 
 }
