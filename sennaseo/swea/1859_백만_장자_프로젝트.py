@@ -17,7 +17,6 @@ def solve():
         for i in range(start, N):
             if data[i] >= data[max_idx]:
                 max_idx = i
-        # 물건 사서 팔기
         for i in range(start, max_idx):
             money += data[max_idx] - data[i]
         start = max_idx + 1
