@@ -11,27 +11,23 @@
 # b c 는 1 이면 아웃.
 
 
-def check(lst):
+def check(a, b, c):
     cnt = 0
-    idx = 0
-    if lst[idx+1] < 2 or lst[idx+2] < 3:
+    if b < 2 or c < 3:
         return -1
 
-    if lst[idx+1] >= lst[idx+2]:
-       cnt += lst[idx+1] - (lst[idx+2] - 1)
-       lst[idx+1] = lst[idx+2] - 1
+    if b >= c:
+       cnt += b - (c - 1)
+       b = c - 1
 
-    if lst[idx] >= lst[idx+1]:
-       cnt += lst[idx] - (lst[idx+1] - 1)
-       lst[idx] = lst[idx+1] - 1
+    if a >= b:
+       cnt += a - (b - 1)
+       a = b - 1
 
     return cnt
 
 
-
-
-
 for tc in range(int(input())):
-    candy = list(map(int, input().split()))
-    result = check(candy)
+    a, b, c = map(int, input().split())
+    result = check(a, b, c)
     print(f'#{tc+1} {result}')
