@@ -1,27 +1,19 @@
-from heapq import heappush, heappop
+def find(x):
+    if parent[x] != x:
+        parent[x] = find(parent[x])
+    return parent[x]
 
-def prim():
-    heapq = [(0, 0)]
-    used = [0] * N
-    pay_sum = 0
 
-    while heapq:
-        now_pay, now_island = heappop(heapq)
+def union(x, y):
+    root_x = find(x)
+    root_y = find(y)
+    if root_x == root_y:
+        return
 
-        if used[now_island]:
-            continue
-
-        used[now_island] = 1
-        pay_sum += now_pay
-
-        for next_island, next_pay in island[now_island]:
-            if used[next_island]:
-                continue
-
-            heappush(heapq, (next_pay, next_island))
-
-    return round((pay_sum))
-
+    if root_x < root_y:
+        parent[root_y] = root_x
+    else:
+        parent[root_x] = root_y
 
 T = int(input())
 for tc in range(1, T + 1):
@@ -30,12 +22,24 @@ for tc in range(1, T + 1):
     Y = list(map(int, input().split()))
     E = float(input())
 
-    island = [[] for _ in range(N)]
-    for i in range(N):
-        for j in range(N):
-            if i == j:
-                continue
-            pay = ((X[i] - X[j]) ** 2 + (Y[i] - Y[j]) ** 2) * E
-            island[i].append((j, pay))
+    island = []
+    for i in range(N - 1):
+        for j in range(i + 1, N):
+            distance = (X[i] - X[j]) ** 2 + (Y[i] - Y[j]) ** 2
+            island.append((i, j, distance))
 
-    print(f'#{tc} {prim()}')
+    island.sort(key=lambda x: x[2])
+
+    parent = [i for i in range(N)]
+    cnt = 0
+    min_dist = 0
+    for s, e, dist in island:
+        if find(s) != find(e):
+            union(s, e)
+            cnt += 1
+            min_dist += dist
+
+            if cnt == N - 1:
+                break
+
+    print(f'#{tc} {round(min_dist * E)}')
