@@ -27,15 +27,6 @@ def solve(buildings):
     return result
 
 
-
-
-
-
-
-
-
-
-
 for tc in range(1,11):
     N = int(input())
     buildings = list(map(int, input().split()))
