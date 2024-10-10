@@ -15,12 +15,12 @@ def check(data, target, start, end):
 
 
 T = int(input())
-N = int(input())
-note = list(map(int, input().split()))
-note.sort()
-M = int(input())
-target = list(map(int, input().split()))
+for _ in range(T):
+    N = int(input())
+    note = list(map(int, input().split()))
+    note.sort()
+    M = int(input())
+    target = list(map(int, input().split()))
 
-for t in target:
-    print(check(note, t, 0, N - 1))
-
+    for t in target:
+        print(check(note, t, 0, N - 1))
