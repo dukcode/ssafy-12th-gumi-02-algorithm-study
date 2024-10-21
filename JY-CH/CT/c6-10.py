@@ -76,6 +76,23 @@ def quick(arr, start, end):
 # 첫번째 데이터 피벗 설정해서 하나 빼야됨
 quick(arr, 0, len(arr) - 1)
 
-print(arr)
+# print(arr)
 for idx in range(n):
     print(arr[n-idx-1], end=' ')
+
+# 계수 정렬
+
+# 일단 전부 0보다 크다
+# 모든 범위 포함 리스트 생성
+# 가장 큰값 + 가장 작은값 0
+count = [0] * (max(arr) + 1)
+
+# 카운트 배열에 맞는 숫자는 값을 올림
+for idx in range(len(arr)):
+    count[arr[idx]] += 1
+
+# 카운트 배열을 돌면서
+for i in range(len(count)):
+    # 계수만큼 도니까 출력하면 정렬 가능
+    for j in range(count[i]):
+        print(i, end=' ')
