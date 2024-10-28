@@ -25,10 +25,9 @@ while True:
     max_total = 0
     for _ in range(n):
         data = list(map(int, input().split()))
-        if len(data) == 3:
-            x, y, z = data[0], data[1], data[2]
-            roads.append((z, x, y))
-            max_total += z
+        x, y, z = data[0], data[1], data[2]
+        roads.append((z, x, y))
+        max_total += z
 
     roads.sort()
 
