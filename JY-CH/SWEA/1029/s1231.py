@@ -18,7 +18,7 @@ for tc in range(1, t+1):
     for _ in range(n):
         # 전날에 한거랑 달리 .을 안찍고 공백을 줘서 그냥 다 받아야됨
         data = input().split()
-        # 입력값 첫번째 순대로 인덱스 받아서 저장
+        # 입력값 첫번째 순대로 key값 받아서 저장
         # data[1] => 문자
         tree[int(data[0])] = data[1]
 
