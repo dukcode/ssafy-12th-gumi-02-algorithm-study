@@ -2,14 +2,19 @@
 import sys
 input = sys.stdin.readline
 
-data = []
 n = int(input())
-for i in range(n):
-    data.append(int(input()))
-    if len(data) >= 2:
-        while True:
-            for j in range(1, i + 1):
-                if data[j - 1] > data[j]:
-                    data[j - 1], data[j] = data[j], data[j - 1]
+data = [0] * 10001
+for _ in range(n):
+    data[int(input())] += 1
 
-print(data)
+for i in range(10001):
+    if data[i]:
+        for j in range(data[i]):
+            print(i)
+
+# 앞으로는 요구사항을 잘 읽고 이해한다음
+# 문제에 명시해놓고 풀것.
+
+# 배열을 n개씩 짤 경우
+# 입력값이 n 이상 나오면 indexerror가 발생할 수 밖에 없다
+# 문제에 답이 있었다..
