@@ -1,23 +1,20 @@
 # 수 정렬하기 3
+import sys
+input = sys.stdin.readline
 
-# 입력값을 받자
 n = int(input())
-# 카운트 배열 받을거다. 마지막 범위엔 1을 추가하자.
-# 안하면 마지막수가 짤린다.
-# 입력값을 전부 받아야 하니까 마지막 범위에 1을 추가한다.
-count = [0] * (n+1)
-# for문을 통해 입력값 다 받고
-for i in range(1, n+1):
-    num = int(input())
-    # count index에 입력 받은 숫자를 할당, 해당 인덱스에 +1
-    count[num] += 1
-print(count)
+data = [0] * 10001
+for _ in range(n):
+    data[int(input())] += 1
 
-# 이러면 count는 인덱스에 해당 값의 갯수당 +1을 할당 받을것.
-# 이제 이걸 꺼내보자
+for i in range(10001):
+    if data[i]:
+        for j in range(data[i]):
+            print(i)
 
-# n개까지 반복할거니까 +1
-for i in range(n+1):
-    # i를 반복할때 count[i]까지 돌면서
-    for _ in range(count[i]):
-        print(i)
+# 앞으로는 요구사항을 잘 읽고 이해한다음
+# 문제에 명시해놓고 풀것.
+
+# 배열을 n개씩 짤 경우
+# 입력값이 n 이상 나오면 indexerror가 발생할 수 밖에 없다
+# 문제에 답이 있었다..
