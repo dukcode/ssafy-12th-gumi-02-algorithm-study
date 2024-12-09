@@ -25,11 +25,26 @@ input = sys.stdin.readline
 
 
 n = int(input())
+m = 1234567891
 data = list(input())
 
+# (A+B) mod M
 result = 0
-m = 1234567891
+for i in range(n):
+    result += (ord(data[i]) - 96) * (31** i)
+result %= m
+
+print(result)
+
+
+# ((A mod M) + (B mod M)) mod M
+result = 0
 for i in range(n):
     result += (ord(data[i]) - 96) * ((31 ** i) % m)
     result %= m
+
 print(result)
+
+
+# 위에 풀이와 아래 풀이는 수학적 관점에서는 같다.
+# 그러나 컴퓨터 시스템적으로 보았을때는 아래 코드가 최적화가 된 코드이다.
