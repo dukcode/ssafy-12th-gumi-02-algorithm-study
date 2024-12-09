@@ -4,3 +4,4 @@ public class B2257 {
         System.out.println(startJava);
     }
 }
+
