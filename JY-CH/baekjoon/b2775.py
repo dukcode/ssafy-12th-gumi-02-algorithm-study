@@ -1,4 +1,4 @@
-# 설탕 배달
+# 부녀회장이 될테야
 import sys
 input = sys.stdin.readline
 
