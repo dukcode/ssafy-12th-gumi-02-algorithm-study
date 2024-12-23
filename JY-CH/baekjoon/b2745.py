@@ -1,6 +1,6 @@
 # 진법 변환
 
-# 입력 처리
+
 import sys
 input = sys.stdin.readline
 
