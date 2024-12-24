@@ -3,6 +3,7 @@
 import sys
 input = sys.stdin.readline
 
+# 그리디 드가자아!
 def check(data, k):
     cnt = 0
     while True:
@@ -14,6 +15,7 @@ def check(data, k):
             
 
 n, k = map(int, input().split())
+# 그리디!
 data = []
 for _ in range(n):
     data.append(int(input()))
