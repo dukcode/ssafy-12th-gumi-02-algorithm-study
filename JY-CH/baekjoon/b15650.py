@@ -12,7 +12,7 @@ def find_all(n, m, data, start):
     for i in range(start, n + 1):
         # 집어 넣고
         data.append(i)
-        # 다시 함수에 넣어서 m 맞으면 출력 아니면 반복
+        # 수 1개 올리고 돌린다
         find_all(n, m, data, i + 1)
         # 그리고 끝났으면 빼고
         data.pop()
