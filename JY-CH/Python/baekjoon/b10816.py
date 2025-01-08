@@ -18,6 +18,7 @@ check = list(map (int, input().split()))
 
 # 중첩 반복문 m * n => 시간초과 발생
 
+# 딕셔너리로 횟수 세기 m
 count = {}
 for number in data:
     if number in count:
@@ -26,5 +27,9 @@ for number in data:
         count[number] = 1
 
 result = []
+# n번 돌면서 확인
 for number in check:
     print(count[number] if number in count else 0, end=" ")
+
+# 딕셔너리 형태로 접근시 m + n
+
