@@ -30,5 +30,5 @@ public class B11726 {
         System.out.println(dp[x]);
         scanner.close();
     }
-
+    
 }
