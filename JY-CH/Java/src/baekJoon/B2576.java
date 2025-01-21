@@ -10,24 +10,23 @@ public class B2576 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-
-
-        int answer_sum = 0;
-        int minimum = Integer.MAX_VALUE;
+        int sum = 0;
+        int min = Integer.MAX_VALUE;
+        boolean hasOdd = false;
         for (int i = 0; i < 7; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-            int x = Integer.parseInt(st.nextToken());
-
+            int x = Integer.parseInt(br.readLine());
+            
             if (x % 2 == 1) {
-                answer_sum += x;
-                if (minimum > x) {
-                    minimum = x;
-                }
+                hasOdd = true;
+                sum += x;
+                min = Math.min(minimum, x);
             }
         }
 
-        if (answer_sum != 0) {
-            bw.write(answer_sum + "\n" + minimum);
+        if (hasOdd) {
+            bw.write(String.valueOf(sum));
+            bw.newLine();
+            bw.write(String.valueOf(min));
         } else {
             bw.write("-1");
         }
