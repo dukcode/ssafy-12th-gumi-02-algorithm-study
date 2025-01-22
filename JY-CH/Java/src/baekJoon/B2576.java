@@ -19,7 +19,7 @@ public class B2576 {
             if (x % 2 == 1) {
                 hasOdd = true;
                 sum += x;
-                min = Math.min(minimum, x);
+                min = Math.min(min, x);
             }
         }
 
